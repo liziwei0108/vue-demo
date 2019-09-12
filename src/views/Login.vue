@@ -1,22 +1,34 @@
 <template>
   <div>
-    <form v-if="!isReg">
-      <div>用户名：</div>
-      <input type="text" v-model="name" />
-      <div>密码：</div>
-      <input type="password" v-model="password" />
+    <p id="welcome">欢迎登录</p>
+    <form v-if="!isReg" class="login">
+      <div>
+        <label>用户名：</label>
+        <input type="text" v-model="name" />
+      </div>
+      <div>
+        <label>密码：</label>
+        <input type="password" v-model="password" />
+      </div>
+      
       <div>
         <button type="button" @click="login()">登录</button>
         <button type="button" @click="reg()">注册</button>
       </div>
     </form>
-    <form v-else>
-      <div>用户名：</div>
-      <input type="text" v-model="name" />
-      <div>密码：</div>
-      <input type="password" v-model="password" />
-      <div>确认密码：</div>
-      <input type="password" v-model="rePassword" />
+    <form v-else class="login">
+      <div>
+        <label>用户名：</label>
+        <input type="text" v-model="name" />
+      </div>
+      <div>
+        <label>密码：</label>
+        <input type="password" v-model="password" />
+      </div>
+      <div>
+        <label>确认密码：</label>
+        <input type="password" v-model="rePassword" />
+      </div>
       <div>
         <button type="button" @click="addUser()">确定</button>
         <button type="button" @click="reLogin()">取消</button>
@@ -73,4 +85,18 @@ export default {
 </script>
 
 <style>
+#welcome{
+  margin:30px 30px 30px 30px;
+  font-size:18px;
+}
+.login{
+  margin:0 30px 0 30px;
+  font-size:16px;
+}
+.login label{
+  display: inline-block;
+  width:80px;
+  text-align: right;
+
+}
 </style>
